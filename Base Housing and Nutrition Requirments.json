@@ -1,0 +1,2068 @@
+{
+  "version": [
+    1,
+    0
+  ],
+  "type": "Eco.Gameplay.Civics.Laws.Law",
+  "name": "Base Housing and Nutrition Requirments",
+  "reference": false,
+  "description": null,
+  "properties": {
+    "Sections": [
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Base Housing Requirment",
+          "UserDescription": "This law enforces a base housing requirment scaling based on the week. Week 2 is 20. Week 3 is 30. Week 4 is 40. This law does not take effect until 168 hours after the citizens first login.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.LaborWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborProfession",
+                    "propDisplayName": "Labor Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborSkill",
+                    "propDisplayName": "Labor Skill",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlowField"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlowField",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Plow",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlantSeeds"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.PlantSpecies"
+                        },
+                        "requiredTag": "Plants",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Planter",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FertilizeAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.FertilizeAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.CitizenAgeInHours",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 168.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Settlements.Civics.SettlementInfluencesPosition",
+                        "properties": {
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "St. Louis",
+                              "reference": true
+                            }
+                          },
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"LaborWorkOrderAction\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 168.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 336.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.SkillRate",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderFood": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.No",
+                                                "properties": {}
+                                              },
+                                              "ConsiderHousing": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 20.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 336.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 504.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.SkillRate",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderFood": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.No",
+                                                "properties": {}
+                                              },
+                                              "ConsiderHousing": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 30.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 504.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.SkillRate",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderFood": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.No",
+                                                "properties": {}
+                                              },
+                                              "ConsiderHousing": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 40.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                }
+                              ],
+                              "Comparison": "Any"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                              "reference": false,
+                              "properties": {
+                                "Message": "You require a base housing value of at least 10 * the current week of the cycle.",
+                                "NotificationType": "SideBarMessage",
+                                "PeopleToSendTo": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "ValueToDisplay": null,
+                                "LocationToDisplay": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Base Food Subtotal Requirment ",
+          "UserDescription": "This law enforces a base food subtotal on everyone with it scaling based on the week of the cycle. Week 2 - 20. Week 3 - 25. Week 4 - 35. This law does not take effect untill 168 hours after the citizens first login.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.LaborWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborProfession",
+                    "propDisplayName": "Labor Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborSkill",
+                    "propDisplayName": "Labor Skill",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlowField"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlowField",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Plow",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FertilizeAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.FertilizeAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlantSeeds"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.PlantSpecies"
+                        },
+                        "requiredTag": "Plants",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Planter",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.HarvestOrHunt"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.Species"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.HarvestOrHunt",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Harvester",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                        "properties": {
+                          "Left": {
+                            "type": "Eco.Gameplay.Civics.GameValues.Values.CitizenAgeInHours",
+                            "properties": {
+                              "Citizen": {
+                                "type": "GameValueContext",
+                                "_name": "Citizen",
+                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                              }
+                            }
+                          },
+                          "Comparison": "GreaterThan",
+                          "Right": {
+                            "type": "GameValueWrapper",
+                            "value": 10000.0
+                          }
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Settlements.Civics.SettlementInfluencesPosition",
+                        "properties": {
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "St. Louis",
+                              "reference": true
+                            }
+                          },
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"LaborWorkOrderAction\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 168.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 336.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.Nutrition",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderCarbs": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderVits": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderProtein": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderFat": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 25.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 336.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 504.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.Nutrition",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderCarbs": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderVits": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderProtein": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderFat": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 30.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                },
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                                  "properties": {
+                                    "List": [
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                            "properties": {}
+                                          },
+                                          "Comparison": "GreaterThanOrEqualTo",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 504.0
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                        "properties": {
+                                          "Left": {
+                                            "type": "Eco.Mods.LawExtensions.Nutrition",
+                                            "properties": {
+                                              "Citizen": {
+                                                "type": "GameValueContext",
+                                                "_name": "Citizen",
+                                                "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                                "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                              },
+                                              "ConsiderCarbs": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderVits": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderProtein": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              },
+                                              "ConsiderFat": {
+                                                "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                                "properties": {}
+                                              }
+                                            }
+                                          },
+                                          "Comparison": "LessThan",
+                                          "Right": {
+                                            "type": "GameValueWrapper",
+                                            "value": 35.0
+                                          }
+                                        }
+                                      }
+                                    ],
+                                    "Comparison": "All"
+                                  }
+                                }
+                              ],
+                              "Comparison": "Any"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                              "reference": false,
+                              "properties": {
+                                "Message": "You need a base subtotal nutritiona amount scaling by the week of the cycle. Week 2 - 25. Week 3 - 30. Week 4 - 35.",
+                                "NotificationType": "SideBarMessage",
+                                "PeopleToSendTo": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "ValueToDisplay": null,
+                                "LocationToDisplay": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Eco.Gameplay.Civics.Laws.LawSection",
+        "reference": false,
+        "properties": {
+          "Title": "Base Nutrition Requirment",
+          "UserDescription": "This law enforces a somewhat balance diet by requirering at least 10% of your nutrients come from carbs, vitamins, proteins, and fat. This law only applies after the first week.",
+          "Triggers": [
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.LaborWorkOrderAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborProfession",
+                    "propDisplayName": "Labor Profession",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Profession",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "LaborSkill",
+                    "propDisplayName": "Labor Skill",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Skills.Skill"
+                        },
+                        "requiredTag": "Specialty",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "CraftedItem",
+                    "propDisplayName": "Crafted Item",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "Byproduct",
+                    "propDisplayName": "Byproduct",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Product",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.LaborWorkOrderAction",
+                    "propNameBacker": "WorldObjectItem",
+                    "propDisplayName": "Crafting Table",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Crafting Table",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.DigOrMine"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavatable",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.DigOrMine",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Excavation",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlowField"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlowField",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Plow",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.FertilizeAction"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.FertilizeAction",
+                    "propNameBacker": "ItemUsed",
+                    "propDisplayName": "Item Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.PlantSeeds"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.PlantSpecies"
+                        },
+                        "requiredTag": "Plants",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.PlantSeeds",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Planter",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "Eco.Gameplay.Civics.Laws.TriggerSettings",
+              "reference": false,
+              "properties": {
+                "Trigger": {
+                  "type": "Type",
+                  "value": "Eco.Gameplay.GameActions.ChopTree"
+                },
+                "Configs": [
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "Species",
+                    "propDisplayName": "Species",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Simulation.Types.TreeSpecies"
+                        },
+                        "requiredTag": null,
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  },
+                  {
+                    "type": "Eco.Gameplay.GameActions.SelectTriggerConfig",
+                    "typeToConfig": "Eco.Gameplay.GameActions.ChopTree",
+                    "propNameBacker": "ToolUsed",
+                    "propDisplayName": "Tool Used",
+                    "properties": {
+                      "List": {
+                        "type": "GamePickerList",
+                        "mustDeriveType": {
+                          "type": "Type",
+                          "value": "Eco.Gameplay.Items.Item"
+                        },
+                        "requiredTag": "Logging",
+                        "internalDescription": "Any",
+                        "entries": []
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "IfThenBlocks": [
+            {
+              "type": "Eco.Gameplay.Civics.IfThenBlock",
+              "reference": false,
+              "properties": {
+                "If": {
+                  "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                  "properties": {
+                    "List": [
+                      {
+                        "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                        "properties": {
+                          "List": [
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                              "properties": {
+                                "Left": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                  "properties": {
+                                    "LeftNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Operation": "Divide",
+                                    "RightNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Comparison": "LessThan",
+                                "Right": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                              "properties": {
+                                "Left": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                  "properties": {
+                                    "LeftNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Operation": "Divide",
+                                    "RightNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Comparison": "LessThan",
+                                "Right": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                              "properties": {
+                                "Left": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                  "properties": {
+                                    "LeftNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Operation": "Divide",
+                                    "RightNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Comparison": "LessThan",
+                                "Right": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                              "properties": {
+                                "Left": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Arithmetic",
+                                  "properties": {
+                                    "LeftNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.No",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        }
+                                      }
+                                    },
+                                    "Operation": "Divide",
+                                    "RightNumber": {
+                                      "type": "Eco.Mods.LawExtensions.Nutrition",
+                                      "properties": {
+                                        "Citizen": {
+                                          "type": "GameValueContext",
+                                          "_name": "Citizen",
+                                          "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                          "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                        },
+                                        "ConsiderCarbs": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderVits": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderProtein": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        },
+                                        "ConsiderFat": {
+                                          "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                          "properties": {}
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "Comparison": "LessThan",
+                                "Right": {
+                                  "type": "GameValueWrapper",
+                                  "value": 0.1
+                                }
+                              }
+                            }
+                          ],
+                          "Comparison": "Any"
+                        }
+                      },
+                      {
+                        "type": "Eco.Gameplay.Settlements.Civics.SettlementInfluencesPosition",
+                        "properties": {
+                          "Settlement": {
+                            "type": "GameValueWrapper",
+                            "value": {
+                              "type": "Eco.Gameplay.Settlements.Settlement",
+                              "name": "St. Louis",
+                              "reference": true
+                            }
+                          },
+                          "Location": {
+                            "type": "GameValueContext",
+                            "_name": "Action Location",
+                            "markedUpName": "<icon name=\"LaborWorkOrderAction\" type=\"\">Action Location</icon>",
+                            "contextDescription": "<i>The position where the interaction took place.</i>"
+                          }
+                        }
+                      }
+                    ],
+                    "Comparison": "All"
+                  }
+                },
+                "Then": [
+                  {
+                    "type": "Eco.Gameplay.Civics.LegalActions.Conditional_LegalAction",
+                    "reference": false,
+                    "properties": {
+                      "IfThenBlock": {
+                        "type": "Eco.Gameplay.Civics.IfThenBlock",
+                        "reference": false,
+                        "properties": {
+                          "If": {
+                            "type": "Eco.Gameplay.Civics.GameValues.SetOfConditions",
+                            "properties": {
+                              "List": [
+                                {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Compare",
+                                  "properties": {
+                                    "Left": {
+                                      "type": "Eco.Gameplay.Civics.GameValues.Values.WorldAgeInHours",
+                                      "properties": {}
+                                    },
+                                    "Comparison": "GreaterThanOrEqualTo",
+                                    "Right": {
+                                      "type": "GameValueWrapper",
+                                      "value": 168.0
+                                    }
+                                  }
+                                }
+                              ],
+                              "Comparison": "All"
+                            }
+                          },
+                          "Then": [
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.Prevent_LegalAction",
+                              "reference": false,
+                              "properties": {
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            },
+                            {
+                              "type": "Eco.Gameplay.Civics.LegalActions.SendNotice",
+                              "reference": false,
+                              "properties": {
+                                "Message": "You need to have at least 10% in each nutrition category (Carb, Vitamins, Protein, Fat).",
+                                "NotificationType": "SideBarMessage",
+                                "PeopleToSendTo": {
+                                  "type": "GameValueContext",
+                                  "_name": "Citizen",
+                                  "markedUpName": "<icon name=\"User\" type=\"\">Citizen</icon>",
+                                  "contextDescription": "<i>The citizen who performed the interaction.</i>"
+                                },
+                                "ValueToDisplay": null,
+                                "LocationToDisplay": null,
+                                "InfoboxOnSuccess": {
+                                  "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                                  "properties": {}
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "InfoboxOnSuccess": {
+                        "type": "Eco.Gameplay.Civics.GameValues.Yes",
+                        "properties": {}
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "State": "Active"
+  }
+}
