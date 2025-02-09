@@ -762,7 +762,7 @@
                     "properties": {
                       "RepeatForEachCitizen": {
                         "type": "Eco.Gameplay.Civics.Demographics.Demographic",
-                        "name": "Citizens of St. Louis 2",
+                        "name": "Citizens of St. Louis",
                         "reference": true
                       },
                       "HoursBetweenExecutions": 24.0
