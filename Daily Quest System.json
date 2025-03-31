@@ -1545,7 +1545,7 @@
                                             "type": "GameValueWrapper",
                                             "value": {
                                               "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-                                              "name": "# Minister of Indrastructure Budget Treasury",
+                                              "name": "The Federation of White Tiger Treasury",
                                               "reference": true
                                             }
                                           },
@@ -1667,7 +1667,7 @@
                                             "type": "GameValueWrapper",
                                             "value": {
                                               "type": "Eco.Gameplay.Economy.TreasuryBankAccount",
-                                              "name": "# Minister of Indrastructure Budget Treasury",
+                                              "name": "The Federation of White Tiger Treasury",
                                               "reference": true
                                             }
                                           },
